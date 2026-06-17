@@ -1,0 +1,265 @@
+Disease,Symptoms,Specialist
+Common Cold,"runny nose,sore throat,cough,congestion,sneezing,mild headache,mild body aches",General Physician / Internist
+Influenza (Flu),"fever,chills,muscle aches,cough,congestion,runny nose,headaches,fatigue",General Physician / Internist
+COVID-19,"fever,cough,fatigue,loss of taste or smell,sore throat,headache,shortness of breath",General Physician / Pulmonologist
+Strep Throat,"sore throat,pain when swallowing,fever,red and swollen tonsils,tiny red spots on roof of mouth,swollen lymph nodes",General Physician / ENT Specialist
+Pneumonia,"cough with phlegm,fever,chills,difficulty breathing,chest pain when breathing or coughing",Pulmonologist / General Physician
+Bronchitis,"cough,production of mucus (sputum),fatigue,shortness of breath,slight fever and chills,chest discomfort",Pulmonologist / General Physician
+Tuberculosis (TB),"persistent cough for three weeks or more,coughing up blood,chest pain,unintentional weight loss,fatigue,fever,night sweats,chills",Infectious Disease Specialist / Pulmonologist
+Malaria,"fever,chills,headache,nausea and vomiting,muscle pain,fatigue,sweating",Infectious Disease Specialist / General Physician
+Dengue Fever,"high fever,severe headache,pain behind the eyes,severe joint and muscle pain,fatigue,nausea,vomiting,skin rash",Infectious Disease Specialist / General Physician
+Chickenpox,"itchy blister-like rash,fever,loss of appetite,headache,tiredness",Pediatrician / General Physician
+Measles,"cough,runny nose,inflamed eyes (conjunctivitis),sore throat,fever,a red, blotchy skin rash",Pediatrician / Infectious Disease Specialist
+Hypertension (High Blood Pressure),"often asymptomatic,headaches,shortness of breath,nosebleeds,dizziness",Cardiologist / General Physician
+Coronary Artery Disease (CAD),"chest pain (angina),shortness of breath,fatigue,heart attack",Cardiologist
+Heart Failure,"shortness of breath,fatigue and weakness,swelling in legs, ankles and feet,rapid or irregular heartbeat,persistent cough or wheezing",Cardiologist
+Myocardial Infarction (Heart Attack),"chest pain or discomfort,pain in other areas of the upper body,shortness of breath,cold sweat,nausea,lightheadedness",Cardiologist / Emergency Medicine
+Arrhythmia,"fluttering in chest,racing heartbeat (tachycardia),slow heartbeat (bradycardia),chest pain,shortness of breath,dizziness",Cardiologist / Electrophysiologist
+Asthma,"shortness of breath,chest tightness or pain,wheezing when exhaling,trouble sleeping caused by shortness of breath, coughing or wheezing",Pulmonologist / Allergist
+Chronic Obstructive Pulmonary Disease (COPD),"shortness of breath,wheezing,chest tightness,chronic cough that may produce mucus,frequent respiratory infections",Pulmonologist
+Gastroesophageal Reflux Disease (GERD),"heartburn,regurgitation of food or sour liquid,chest pain,difficulty swallowing,chronic cough",Gastroenterologist
+Peptic Ulcer,"burning stomach pain,feeling of fullness, bloating or belching,intolerance to fatty foods,heartburn,nausea",Gastroenterologist
+Irritable Bowel Syndrome (IBS),"abdominal pain,cramping,bloating,gas,diarrhea or constipation (or both)",Gastroenterologist
+Crohn's Disease,"diarrhea,fever,fatigue,abdominal pain and cramping,blood in stool,mouth sores,reduced appetite and weight loss",Gastroenterologist
+Ulcerative Colitis,"diarrhea, often with blood or pus,abdominal pain and cramping,rectal pain,rectal bleeding,urgency to defecate",Gastroenterologist
+Gallstones,"sudden and rapidly intensifying pain in the upper right abdomen,pain between shoulder blades,pain in right shoulder,nausea or vomiting",Gastroenterologist / General Surgeon
+Appendicitis,"sudden pain that begins on the right side of the lower abdomen,pain that worsens with coughing or walking,nausea and vomiting,loss of appetite,low-grade fever",General Surgeon / Emergency Medicine
+Migraine,"severe throbbing or pulsing headache,nausea,vomiting,extreme sensitivity to light and sound",Neurologist
+Epilepsy,"seizures,temporary confusion,a staring spell,uncontrollable jerking movements of the arms and legs,loss of consciousness or awareness",Neurologist
+Alzheimer's Disease,"memory loss,difficulty planning or solving problems,confusion with time or place,trouble understanding visual images,problems with words in speaking or writing",Neurologist / Geriatrician
+Parkinson's Disease,"tremor,slowed movement (bradykinesia),rigid muscles,impaired posture and balance,loss of automatic movements,speech changes",Neurologist
+Multiple Sclerosis (MS),"numbness or weakness in one or more limbs,electric-shock sensations with certain neck movements,tremor,lack of coordination,vision problems",Neurologist
+Stroke,"sudden numbness or weakness in the face, arm, or leg, especially on one side of the body,sudden confusion, trouble speaking, or difficulty understanding speech,sudden trouble seeing in one or both eyes,sudden trouble walking, dizziness, loss of balance, or lack of coordination",Neurologist / Emergency Medicine
+Type 1 Diabetes,"increased thirst,frequent urination,extreme hunger,unintended weight loss,fatigue,blurred vision",Endocrinologist
+Type 2 Diabetes,"increased thirst,frequent urination,increased hunger,unintended weight loss,fatigue,blurred vision,slow-healing sores,frequent infections",Endocrinologist / General Physician
+Hypothyroidism,"fatigue,increased sensitivity to cold,constipation,dry skin,weight gain,puffy face,hoarseness,muscle weakness",Endocrinologist
+Hyperthyroidism,"unintentional weight loss,rapid or irregular heartbeat,sweating,irritability,fatigue,hand tremors",Endocrinologist
+Rheumatoid Arthritis,"tender, warm, swollen joints,joint stiffness that is usually worse in the mornings,fatigue,fever,loss of appetite",Rheumatologist
+Lupus,"fatigue,fever,joint pain, stiffness and swelling,butterfly-shaped rash on the face,skin lesions that appear or worsen with sun exposure",Rheumatologist
+Psoriasis,"red patches of skin covered with thick, silvery scales,dry, cracked skin that may bleed,itching, burning or soreness,swollen and stiff joints",Dermatologist / Rheumatologist
+Osteoarthritis,"pain,stiffness,tenderness,loss of flexibility,grating sensation,bone spurs",Rheumatologist / Orthopedic Surgeon
+Gout,"intense joint pain,lingering discomfort,inflammation and redness,limited range of motion",Rheumatologist
+Fibromyalgia,"widespread pain,fatigue,cognitive difficulties (fibro fog)",Rheumatologist / General Physician
+Acne,"whiteheads,blackheads,pimples,oily skin,scarring",Dermatologist
+Eczema (Atopic Dermatitis),"dry skin,itching,red to brownish-gray patches,small, raised bumps, which may leak fluid,thickened, cracked, scaly skin",Dermatologist / Allergist
+Melanoma,"a new, unusual growth or a change in an existing mole,asymmetrical shape,irregular border,changes in color,diameter larger than 6mm",Dermatologist / Oncologist
+Basal Cell Carcinoma,"a pearly or waxy bump,a flat, flesh-colored or brown scar-like lesion,a bleeding or scabbing sore that heals and returns",Dermatologist
+Squamous Cell Carcinoma,"a firm, red nodule,a flat lesion with a scaly, crusted surface",Dermatologist
+Breast Cancer,"breast lump or thickening,change in the size, shape or appearance of a breast,changes to the skin over the breast, such as dimpling,a newly inverted nipple",Oncologist / Breast Surgeon
+Lung Cancer,"a new cough that doesn't go away,coughing up blood,shortness of breath,chest pain,hoarseness,losing weight without trying",Oncologist / Pulmonologist
+Prostate Cancer,"trouble urinating,decreased force in the stream of urine,blood in the urine,blood in the semen,bone pain,erectile dysfunction",Urologist / Oncologist
+Colorectal Cancer,"a change in your bowel habits,rectal bleeding or blood in your stool,persistent abdominal discomfort,a feeling that your bowel doesn't empty completely,weakness or fatigue",Gastroenterologist / Oncologist
+Leukemia,"fever or chills,persistent fatigue, weakness,frequent or severe infections,losing weight without trying,swollen lymph nodes,easy bleeding or bruising",Hematologist / Oncologist
+Lymphoma,"painless swelling of lymph nodes in your neck, armpits or groin,persistent fatigue,fever,night sweats,shortness of breath",Hematologist / Oncologist
+Anxiety Disorder,"feeling nervous, restless or tense,having a sense of impending danger, panic or doom,increased heart rate,rapid breathing,sweating,trembling",Psychiatrist / Psychologist
+Depression,"persistent sad, anxious, or 'empty' mood,feelings of hopelessness or pessimism,irritability,loss of interest or pleasure in hobbies and activities,fatigue",Psychiatrist / Psychologist
+Bipolar Disorder,"episodes of mania and depression,mood swings,changes in sleep, energy, activity, and behavior",Psychiatrist
+Schizophrenia,"delusions,hallucinations,disorganized speech,extremely disorganized or catatonic behavior,negative symptoms (e.g., reduced emotional expression)",Psychiatrist
+Obsessive-Compulsive Disorder (OCD),"presence of obsessions, compulsions, or both,obsessions are recurrent and persistent thoughts, urges, or images that are intrusive,compulsions are repetitive behaviors or mental acts",Psychiatrist / Psychologist
+Post-Traumatic Stress Disorder (PTSD),"intrusive memories,avoidance,negative changes in thinking and mood,changes in physical and emotional reactions",Psychiatrist / Psychologist
+Urinary Tract Infection (UTI),"a strong, persistent urge to urinate,a burning sensation when urinating,passing frequent, small amounts of urine,urine that appears cloudy,pelvic pain",Urologist / General Physician
+Kidney Stones,"severe pain in the side and back, below the ribs,pain that radiates to the lower abdomen and groin,pain on urination,pink, red or brown urine,nausea and vomiting",Urologist / Nephrologist
+Chronic Kidney Disease (CKD),"nausea,vomiting,loss of appetite,fatigue and weakness,sleep problems,changes in how much you urinate,decreased mental sharpness",Nephrologist
+Glomerulonephritis,"pink or cola-colored urine from red blood cells in your urine (hematuria),foamy urine due to excess protein (proteinuria),high blood pressure,fluid retention (edema)",Nephrologist
+Anemia,"fatigue,weakness,pale skin,shortness of breath,dizziness,cold hands and feet",Hematologist / General Physician
+Hemophilia,"unexplained and excessive bleeding from cuts or injuries,many large or deep bruises,unusual bleeding after vaccinations,pain, swelling or tightness in your joints",Hematologist
+Thrombocytopenia,"easy or excessive bruising,superficial bleeding into the skin that appears as pinpoint-sized reddish-purple spots (petechiae),prolonged bleeding from cuts",Hematologist
+Cataracts,"clouded, blurred or dim vision,increasing difficulty with vision at night,sensitivity to light and glare,seeing 'halos' around lights,frequent changes in eyeglass prescription",Ophthalmologist
+Glaucoma,"patchy blind spots in your side (peripheral) or central vision,tunnel vision in the advanced stages,severe headache,eye pain,nausea and vomiting",Ophthalmologist
+Macular Degeneration,"blurred or reduced central vision,visual distortions, such as straight lines seeming bent,difficulty adapting to low light levels",Ophthalmologist
+Conjunctivitis (Pink Eye),"redness in one or both eyes,itchiness in one or both eyes,a gritty feeling in one or both eyes,discharge that forms a crust during the night",Ophthalmologist / General Physician
+Otitis Media (Middle Ear Infection),"ear pain,fluid drainage from the ear,trouble hearing",ENT Specialist / Pediatrician
+Sinusitis,"nasal inflammation,thick, discolored discharge from the nose,drainage down the back of the throat,nasal obstruction or congestion,pain, tenderness and swelling around your eyes, cheeks, nose or forehead",ENT Specialist
+Tonsillitis,"swollen, red tonsils,white or yellow coating or patches on the tonsils,sore throat,difficult or painful swallowing,fever",ENT Specialist
+Sleep Apnea,"loud snoring,episodes in which you stop breathing during sleep,gasping for air during sleep,awakening with a dry mouth,morning headache",Sleep Medicine Specialist / Pulmonologist
+Endometriosis,"painful periods (dysmenorrhea),pain with intercourse,pain with bowel movements or urination,excessive bleeding,infertility",Gynecologist
+Polycystic Ovary Syndrome (PCOS),"irregular periods,excess androgen (male hormone) levels,polycystic ovaries,acne,weight gain",Gynecologist / Endocrinologist
+Benign Prostatic Hyperplasia (BPH),"frequent or urgent need to urinate,increased frequency of urination at night (nocturia),difficulty starting urination,weak urine stream",Urologist
+Erectile Dysfunction,"trouble getting an erection,trouble keeping an erection,reduced sexual desire",Urologist
+Celiac Disease,"diarrhea,fatigue,weight loss,bloating and gas,abdominal pain,nausea and vomiting,constipation",Gastroenterologist
+Cirrhosis,"fatigue,easily bleeding or bruising,loss of appetite,nausea,swelling in your legs, feet or ankles (edema),weight loss",Gastroenterologist / Hepatologist
+Hepatitis A,"fatigue,nausea and vomiting,abdominal pain or discomfort,clay-colored bowel movements,loss of appetite,low-grade fever,dark urine,jaundice",Gastroenterologist / Hepatologist / Infectious Disease Specialist
+Hepatitis B,"abdominal pain,dark urine,fever,joint pain,loss of appetite,nausea and vomiting,weakness and fatigue,jaundice",Gastroenterologist / Hepatologist / Infectious Disease Specialist
+Hepatitis C,"bleeding easily,bruising easily,fatigue,poor appetite,jaundice,dark-colored urine,itchy skin,fluid buildup in your abdomen (ascites)",Gastroenterologist / Hepatologist / Infectious Disease Specialist
+HIV/AIDS,"fever,headache,muscle aches and joint pain,rash,sore throat and painful mouth sores,swollen lymph glands,diarrhea,weight loss,cough,night sweats",Infectious Disease Specialist
+Mononucleosis (Mono),"fatigue,sore throat,fever,swollen lymph nodes in your neck and armpits,swollen tonsils,headache,skin rash",General Physician / Infectious Disease Specialist
+Lyme Disease,"fever,chills,headache,fatigue,muscle and joint aches,swollen lymph nodes,Erythema migrans (bull's-eye) rash",Infectious Disease Specialist
+Shingles,"pain, burning, numbness or tingling,sensitivity to touch,a red rash that begins a few days after the pain,fluid-filled blisters that break open and crust over,itching",General Physician / Dermatologist
+Rabies,"fever,headache,nausea,vomiting,agitation,anxiety,confusion,hyperactivity,difficulty swallowing,excessive salivation,fear of water (hydrophobia)",Infectious Disease Specialist / Emergency Medicine
+Tetanus,"jaw cramping,sudden, involuntary muscle spasms — often in the stomach,painful muscle stiffness all over the body,trouble swallowing,seizures",Infectious Disease Specialist / Emergency Medicine
+Meningitis,"sudden high fever,stiff neck,severe headache,nausea or vomiting,confusion or difficulty concentrating,seizures,sensitivity to light",Neurologist / Infectious Disease Specialist
+Osteoporosis,"back pain, caused by a fractured or collapsed vertebra,loss of height over time,a stooped posture,a bone that breaks much more easily than expected",Endocrinologist / Rheumatologist
+Scoliosis,"uneven shoulders,one shoulder blade that appears more prominent than the other,uneven waist,one hip higher than the other",Orthopedic Surgeon
+Carpal Tunnel Syndrome,"tingling or numbness in your hand or fingers,weakness in your hand and a tendency to drop objects",Neurologist / Orthopedic Surgeon
+Plantar Fasciitis,"stabbing pain in the bottom of your foot near the heel,pain that is usually worst with the first few steps after awakening",Podiatrist / Orthopedic Surgeon
+Torn Meniscus,"a popping sensation,swelling or stiffness,pain, especially when twisting or rotating your knee,difficulty straightening your knee fully",Orthopedic Surgeon
+ACL Injury,"a loud 'pop' or a 'popping' sensation in the knee,severe pain and inability to continue activity,rapid swelling,loss of range of motion",Orthopedic Surgeon
+Rosacea,"facial redness,swollen red bumps,eye problems,enlarged nose",Dermatologist
+Cellulitis,"redness,swelling,tenderness,pain,warmth,fever",Infectious Disease Specialist / Dermatologist
+Impetigo,"red sores that quickly rupture, ooze for a few days and then form a yellowish-brown crust,itching,soreness",Pediatrician / Dermatologist
+Ringworm,"a scaly, ring-shaped area, typically on the buttocks, trunk, arms and legs,itchiness",Dermatologist / General Physician
+Athlete's Foot,"a scaly, peeling or cracked rash between the toes,itching,stinging and burning",Dermatologist / Podiatrist
+Jock Itch,"itching and redness in the groin, inner thighs, or buttocks,a red, circular, raised rash with elevated edges",Dermatologist
+Pancreatitis,"upper abdominal pain,abdominal pain that radiates to your back,tenderness when touching the abdomen,fever,rapid pulse,nausea,vomiting",Gastroenterologist
+Diverticulitis,"pain, which may be constant and persist for several days,nausea and vomiting,fever,abdominal tenderness,constipation or, less commonly, diarrhea",Gastroenterologist / General Surgeon
+Gastritis,"gnawing or burning ache or pain (indigestion) in your upper abdomen,nausea,vomiting,a feeling of fullness in your upper abdomen after eating",Gastroenterologist
+Food Poisoning,"nausea,vomiting,watery or bloody diarrhea,abdominal pain and cramps,fever",General Physician / Gastroenterologist
+Allergic Rhinitis (Hay Fever),"sneezing,runny or stuffy nose,itchy or watery eyes,itching of the nose or throat",Allergist / Immunologist
+Anaphylaxis,"skin reactions, including hives and itching and flushed or pale skin,low blood pressure (hypotension),constriction of your airways, a swollen tongue or throat, causing wheezing and trouble breathing",Allergist / Immunologist / Emergency Medicine
+Sickle Cell Anemia,"episodes of pain (pain crises),swelling of hands and feet,frequent infections,delayed growth or puberty,vision problems",Hematologist
+Aplastic Anemia,"fatigue,shortness of breath,rapid or irregular heart rate,pale skin,frequent or prolonged infections,unexplained or easy bruising",Hematologist
+Polycythemia Vera,"headache,dizziness,itchiness, especially after a warm bath or shower,redness of your skin,shortness of breath",Hematologist
+Myelodysplastic Syndromes (MDS),"fatigue,shortness of breath,unusual paleness (pallor),easy bruising or bleeding,pinpoint-sized red spots just beneath the skin (petechiae)",Hematologist / Oncologist
+Thyroid Cancer,"a lump that can be felt through the skin on your neck,changes to your voice, including increasing hoarseness,difficulty swallowing,pain in your neck and throat,swollen lymph nodes in your neck",Endocrinologist / Oncologist
+Ovarian Cancer,"abdominal bloating or swelling,quickly feeling full when eating,weight loss,discomfort in the pelvis area,changes in bowel habits,a frequent need to urinate",Gynecologic Oncologist
+Cervical Cancer,"vaginal bleeding after intercourse, between periods or after menopause,watery, bloody vaginal discharge that may be heavy and have a foul odor,pelvic pain or pain during intercourse",Gynecologic Oncologist
+Testicular Cancer,"a lump or enlargement in either testicle,a feeling of heaviness in the scrotum,a dull ache in the abdomen or groin,a sudden collection of fluid in the scrotum",Urologist / Oncologist
+Kidney Cancer,"blood in your urine (hematuria),pain in your back or side that doesn't go away,loss of appetite,unexplained weight loss,tiredness,fever",Urologist / Oncologist
+Stomach Cancer (Gastric Cancer),"fatigue,feeling bloated after eating,feeling full after eating small amounts of food,severe and persistent heartburn,unexplained, persistent nausea",Gastroenterologist / Oncologist
+Liver Cancer,"losing weight without trying,loss of appetite,upper abdominal pain,nausea and vomiting,general weakness and fatigue,jaundice",Hepatologist / Oncologist
+Pancreatic Cancer,"abdominal pain that radiates to your back,loss of appetite or unintended weight loss,jaundice,light-colored stools,dark-colored urine,itchy skin",Gastroenterologist / Oncologist
+Brain Tumor,"new onset or change in pattern of headaches,headaches that gradually become more frequent and more severe,unexplained nausea or vomiting,vision problems,gradual loss of sensation or movement in an arm or a leg",Neuro-oncologist / Neurosurgeon
+Osteosarcoma,"bone pain,swelling near a bone,bone injury or bone break for no clear reason",Orthopedic Oncologist
+Rhabdomyosarcoma,"a lump or swelling that doesn't go away,pain,bleeding from the nose, throat, vagina or rectum,vision problems",Pediatric Oncologist
+Diabetic Retinopathy,"spots or dark strings floating in your vision (floaters),blurred vision,fluctuating vision,dark or empty areas in your vision,vision loss",Ophthalmologist
+Dry Eye Syndrome,"a stinging, burning or scratchy sensation in your eyes,stringy mucus in or around your eyes,sensitivity to light,eye redness,a sensation of having something in your eyes",Ophthalmologist
+Uveitis,"eye redness,eye pain,light sensitivity,blurred vision,dark, floating spots in your field of vision (floaters)",Ophthalmologist
+Chalazion,"painless lump or swelling on your eyelid,mild irritation,blurred vision if large",Ophthalmologist
+Stye,"a red lump on your eyelid that resembles a boil or a pimple,eyelid pain,eyelid swelling,tearing",Ophthalmologist / General Physician
+Hearing Loss,"muffling of speech and other sounds,difficulty understanding words, especially against background noise,trouble hearing consonants,frequently asking others to speak more slowly, clearly and loudly",Audiologist / ENT Specialist
+Tinnitus,"ringing,buzzing,roaring,clicking,hissing, or humming sound in your ears",Audiologist / ENT Specialist
+Vertigo,"a sense of spinning, tilting, swaying, or being unbalanced,nausea,vomiting,abnormal or jerking eye movements (nystagmus),headache",Neurologist / ENT Specialist
+Laryngitis,"hoarseness,weak voice or voice loss,tickling sensation and rawness in your throat,sore throat,dry throat,dry cough",ENT Specialist
+Dysphagia,"pain while swallowing,inability to swallow,a sensation of food getting stuck in your throat or chest,drooling,hoarseness",Gastroenterologist / ENT Specialist / Speech-Language Pathologist
+Interstitial Lung Disease,"dry cough,shortness of breath at rest or aggravated by exertion",Pulmonologist
+Pulmonary Embolism,"shortness of breath,chest pain,cough, which may contain blood,leg pain or swelling, or both, usually in the calf",Pulmonologist / Emergency Medicine
+Pulmonary Hypertension,"shortness of breath,fatigue,dizziness or fainting spells (syncope),chest pressure or pain,swelling (edema) in your ankles, legs and eventually in your abdomen (ascites)",Cardiologist / Pulmonologist
+Sarcoidosis,"fatigue,fever,swollen lymph nodes,weight loss,pain and swelling in joints, such as the ankles,persistent dry cough,shortness of breath,a rash of red or reddish-purple bumps",Pulmonologist / Rheumatologist
+Cystic Fibrosis,"a persistent cough that produces thick mucus,wheezing,breathlessness,frequent lung infections,poor growth or weight gain in spite of a good appetite",Pulmonologist / Pediatrician
+Addison's Disease,"extreme fatigue,weight loss and decreased appetite,darkening of your skin (hyperpigmentation),low blood pressure,salt craving,low blood sugar (hypoglycemia)",Endocrinologist
+Cushing's Syndrome,"weight gain and fatty tissue deposits, particularly around the midsection and upper back, in the face (moon face), and between the shoulders (buffalo hump),pink or purple stretch marks,thin, fragile skin that bruises easily",Endocrinologist
+Graves' Disease,"anxiety and irritability,a fine tremor of your hands or fingers,heat sensitivity and an increase in perspiration,weight loss, despite normal eating habits,enlargement of your thyroid gland (goiter)",Endocrinologist
+Hashimoto's Disease,"fatigue and sluggishness,increased sensitivity to cold,constipation,pale, dry skin,a puffy face,brittle nails,hair loss",Endocrinologist
+Sjogren's Syndrome,"dry eyes,dry mouth,joint pain, swelling and stiffness,swollen salivary glands,persistent dry cough",Rheumatologist
+Scleroderma,"hardening and tightening of patches of skin,Raynaud's phenomenon,acid reflux,problems absorbing nutrients",Rheumatologist
+Polymyalgia Rheumatica,"aches or pain in your shoulders,aches or pain in your neck, upper arms, buttocks, hips or thighs,stiffness in affected areas, particularly in the morning,fatigue",Rheumatologist
+Ankylosing Spondylitis,"pain and stiffness in your lower back and hips, especially in the morning,neck pain,fatigue",Rheumatologist
+Reactive Arthritis,"pain and stiffness in your joints, especially your knees, ankles and feet,eye inflammation (conjunctivitis),urinary problems",Rheumatologist
+Psoriatic Arthritis,"swollen fingers and toes,foot pain,lower back pain",Rheumatologist / Dermatologist
+Bursitis,"joint pain and tenderness when you press around the joint,stiffness and aching when you move the affected joint,swelling, warmth or redness over the joint",Orthopedic Surgeon / Rheumatologist
+Tendonitis,"a dull ache where the tendon is located,tenderness,mild swelling",Orthopedic Surgeon / Sports Medicine
+Raynaud's Disease,"cold fingers or toes,color changes in your skin in response to cold or stress,numb, prickly feeling or stinging pain upon warming or stress relief",Rheumatologist
+Peripheral Artery Disease (PAD),"painful cramping in your hip, thigh or calf muscles after certain activities, such as walking or climbing stairs (claudication),leg numbness or weakness,coldness in your lower leg or foot,sores on your toes, feet or legs that won't heal",Vascular Surgeon / Cardiologist
+Deep Vein Thrombosis (DVT),"swelling in the affected leg,pain in your leg,red or discolored skin on the leg,a feeling of warmth in the affected leg",Hematologist / Vascular Surgeon
+Varicose Veins,"veins that are dark purple or blue in color,veins that appear twisted and bulging,an achy or heavy feeling in your legs,burning, throbbing, muscle cramping and swelling in your lower legs",Vascular Surgeon / Dermatologist
+Chronic Venous Insufficiency,"swelling in your legs or ankles,tight feeling in your calves or itchy, painful legs,pain when walking that stops when you rest,brown-colored skin, especially near the ankles",Vascular Surgeon
+Aortic Aneurysm,"tenderness or pain in the abdomen or chest,back pain,a pulsating feeling near the navel",Vascular Surgeon / Cardiothoracic Surgeon
+Atrial Fibrillation,"palpitations,shortness of breath,weakness or fatigue,chest pain,dizziness or fainting",Cardiologist / Electrophysiologist
+Wolff-Parkinson-White Syndrome,"a rapid, pounding heartbeat (palpitations),dizziness or lightheadedness,shortness of breath,fainting,fatigue",Cardiologist / Electrophysiologist
+Marfan Syndrome,"tall and slender build,disproportionately long arms, legs and fingers,a breastbone that protrudes outward or dips inward,a high, arched palate and crowded teeth,heart murmurs",Cardiologist / Geneticist
+Ehlers-Danlos Syndrome,"overly flexible joints,stretchy skin,fragile skin that doesn't heal well",Geneticist / Rheumatologist
+Huntington's Disease,"involuntary jerking or writhing movements (chorea),muscle problems, such as rigidity or muscle contracture (dystonia),slow or abnormal eye movements,impaired gait, posture and balance",Neurologist
+Tourette Syndrome,"simple tics (sudden, brief, repetitive movements),complex tics (distinct, coordinated patterns of movements)",Neurologist / Psychiatrist
+Narcolepsy,"excessive daytime sleepiness,sudden loss of muscle tone (cataplexy),sleep paralysis,hallucinations",Sleep Medicine Specialist / Neurologist
+Restless Legs Syndrome (RLS),"an irresistible urge to move the legs,uncomfortable sensations in the legs,symptoms worsen at night",Neurologist / Sleep Medicine Specialist
+Insomnia,"difficulty falling asleep at night,waking up during the night,waking up too early,not feeling well-rested after a night's sleep",Sleep Medicine Specialist / General Physician
+GERD-related Laryngitis,"hoarseness,chronic cough,throat clearing,sensation of a lump in the throat",ENT Specialist / Gastroenterologist
+Vocal Cord Nodules/Polyps,"hoarseness,breathy voice,rough or scratchy voice,decreased pitch range",ENT Specialist / Laryngologist
+Acoustic Neuroma,"hearing loss, usually gradual,ringing in the ear (tinnitus),unsteadiness, loss of balance,dizziness (vertigo)",Neurosurgeon / ENT Specialist
+Meniere's Disease,"recurring episodes of vertigo,hearing loss,ringing in the ear (tinnitus),a feeling of fullness or pressure in the ear",ENT Specialist
+Otitis Externa (Swimmer's Ear),"itchiness in your ear canal,redness and swelling,pain,drainage of fluid or pus",ENT Specialist / General Physician
+Cholesteatoma,"painless drainage from the ear,hearing loss,dizziness",ENT Specialist
+Uterine Fibroids,"heavy menstrual bleeding,menstrual periods lasting more than a week,pelvic pressure or pain,frequent urination,difficulty emptying the bladder",Gynecologist
+Ovarian Cysts,"pelvic pain,fullness or heaviness in your abdomen,bloating",Gynecologist
+Pelvic Inflammatory Disease (PID),"pain in your lower abdomen and pelvis,heavy vaginal discharge with an unpleasant odor,abnormal uterine bleeding,pain during intercourse,fever",Gynecologist
+Vaginitis,"change in color, odor or amount of discharge from your vagina,vaginal itching or irritation,pain during intercourse,painful urination",Gynecologist
+Prostatitis,"pain or burning sensation when urinating (dysuria),difficulty urinating,frequent urination, especially at night,pain in the abdomen, groin or lower back",Urologist
+Interstitial Cystitis (Painful Bladder Syndrome),"pain in your pelvis or between the vagina and anus in women,pain between the scrotum and anus in men,chronic pelvic pain,a persistent, urgent need to urinate",Urologist
+Testicular Torsion,"sudden, severe pain in the scrotum,swelling of the scrotum,abdominal pain,nausea and vomiting,a testicle that's positioned higher than normal or at an unusual angle",Urologist / Emergency Medicine
+Hydrocele,"painless swelling of one or both testicles",Urologist
+Varicocele,"a lump in one of your testicles,swelling in your scrotum,visibly enlarged or twisted veins in the scrotum,a dull, recurring pain in your scrotum",Urologist
+Hemochromatosis,"joint pain,fatigue,weakness,weight loss,abdominal pain",Hematologist / Gastroenterologist
+Thalassemia,"fatigue,weakness,pale or yellowish skin,facial bone deformities,slow growth,dark urine",Hematologist
+Von Willebrand Disease,"recurrent and prolonged nosebleeds,bleeding from your gums,heavy menstrual bleeding",Hematologist
+Essential Thrombocythemia,"headache,dizziness or lightheadedness,chest pain,fainting,changes in vision",Hematologist
+Myelofibrosis,"feeling tired, weak, or short of breath,pain or fullness below your ribs on the left side,fever,night sweats,easy bruising or bleeding",Hematologist / Oncologist
+Amyloidosis,"severe fatigue,shortness of breath,swelling of your ankles and legs,numbness, tingling or pain in your hands or feet,diarrhea or constipation",Cardiologist / Nephrologist / Hematologist
+Guillain-Barre Syndrome,"prickling, pins and needles sensations in your fingers, toes, ankles or wrists,weakness in your legs that spreads to your upper body,unsteady walking or inability to walk or climb stairs",Neurologist
+Myasthenia Gravis,"weakness of arm or leg muscles,double vision,drooping of eyelids,difficulties with speech, chewing, swallowing and breathing",Neurologist
+Amyotrophic Lateral Sclerosis (ALS),"difficulty walking or doing normal daily activities,tripping and falling,weakness in your leg, feet or ankles,hand weakness or clumsiness,slurred speech or trouble swallowing",Neurologist
+Trigeminal Neuralgia,"episodes of severe, shooting or jabbing pain that may feel like an electric shock,spontaneous attacks of pain or attacks triggered by things such as touching the face, chewing, speaking or brushing teeth",Neurologist
+Bell's Palsy,"rapid onset of mild weakness to total paralysis on one side of your face,facial droop and difficulty making facial expressions,drooling,pain around the jaw or in or behind your ear on the affected side",Neurologist / ENT Specialist
+Cerebral Palsy,"variations in muscle tone, such as being too stiff or too floppy,stiff muscles and exaggerated reflexes (spasticity),stiff muscles with normal reflexes (rigidity),lack of muscle coordination (ataxia)",Neurologist / Physiatrist
+Down Syndrome,"flattened face,small head,short neck,protruding tongue,upward slanting eye lids (palpebral fissures)",Geneticist / Pediatrician
+Turner Syndrome,"a broad chest with widely spaced nipples,low-set ears,a low hairline at the back of the head,slowed growth,cardiac defects",Endocrinologist / Geneticist
+Klinefelter Syndrome,"taller than average stature,longer legs, shorter torso and broader hips compared with other boys,absent, delayed or incomplete puberty,after puberty, less muscle and less facial and body hair compared with other teens",Endocrinologist / Geneticist
+Wilson's Disease,"fatigue, lack of appetite or abdominal pain,a yellowing of the skin and the whites of the eye (jaundice),golden-brown eye discoloration (Kayser-Fleischer rings),fluid buildup in the legs or abdomen",Gastroenterologist / Hepatologist / Neurologist
+Phenylketonuria (PKU),"a musty odor in the breath, skin or urine,neurological problems that may include seizures,skin rashes (eczema),fair skin and blue eyes, because phenylalanine can't transform into melanin",Metabolic Specialist / Geneticist
+Gaucher Disease,"abdominal complaints due to enlarged spleen and liver,bone pain and fractures,anemia,fatigue",Hematologist / Geneticist
+Fabry Disease,"episodes of pain, particularly in the hands and feet,clusters of small, dark red spots on the skin called angiokeratomas,a decreased ability to sweat (hypohidrosis),cloudiness of the cornea",Nephrologist / Cardiologist / Geneticist
+Tay-Sachs Disease,"loss of motor skills,exaggerated startle reaction to loud noises,seizures,vision and hearing loss,'cherry-red' spot in the eyes",Pediatric Neurologist / Geneticist
+Neurofibromatosis,"flat, light brown spots on the skin (cafe-au-lait spots),freckling in the armpits or groin area,tiny bumps on the iris of your eye (Lisch nodules),soft, pea-sized bumps on or under the skin (neurofibromas)",Neurologist / Geneticist
+Tuberous Sclerosis,"skin abnormalities,seizures,cognitive disabilities,behavioral problems,kidney problems",Neurologist / Geneticist
+Retinoblastoma,"a white color in the center circle of the eye (pupil) when light is shone in the eye,eyes that appear to be looking in different directions,eye redness,eye swelling",Ophthalmic Oncologist
+Wilms' Tumor,"an abdominal mass you can feel,abdominal swelling,abdominal pain",Pediatric Oncologist
+Acute Lymphoblastic Leukemia (ALL),"bleeding from the gums,bone pain,fever,frequent infections,frequent or severe nosebleeds,lumps caused by swollen lymph nodes",Pediatric Oncologist / Hematologist
+Acute Myeloid Leukemia (AML),"fever,bone pain,lethargy and fatigue,shortness of breath,pale skin,frequent infections",Hematologist / Oncologist
+Chronic Lymphocytic Leukemia (CLL),"enlarged, but painless, lymph nodes,fatigue,fever,pain in the upper left portion of the abdomen,night sweats,weight loss",Hematologist / Oncologist
+Chronic Myeloid Leukemia (CML),"easy bleeding,feeling run-down or tired,fever,weight loss without trying,loss of appetite,pain or a feeling of fullness below the ribs on the left side",Hematologist / Oncologist
+Multiple Myeloma,"bone pain, especially in your spine or chest,nausea,constipation,loss of appetite,mental fogginess or confusion,fatigue",Hematologist / Oncologist
+Waldenstrom Macroglobulinemia,"easy bruising or bleeding,fatigue,fever,headaches,shortness of breath,vision problems",Hematologist / Oncologist
+Hairy Cell Leukemia,"a feeling of fullness in your abdomen that makes it uncomfortable to eat,fatigue,easy bruising,recurrent infections,weakness",Hematologist / Oncologist
+Hodgkin's Lymphoma,"painless swelling of lymph nodes in your neck, armpits or groin,persistent fatigue,fever,night sweats,unexplained weight loss",Hematologist / Oncologist
+Non-Hodgkin's Lymphoma,"swollen lymph nodes in your neck, armpits or groin,abdominal pain or swelling,chest pain, coughing or trouble breathing,persistent fatigue,fever",Hematologist / Oncologist
+Asbestosis,"shortness of breath,a persistent, dry cough,loss of appetite with weight loss,clubbing of the fingertips and toes,chest tightness or pain",Pulmonologist
+Silicosis,"cough,fever,shortness of breath,fatigue,unexplained weight loss",Pulmonologist
+Byssinosis (Brown Lung Disease),"chest tightness,coughing,wheezing,shortness of breath",Pulmonologist
+Hypersensitivity Pneumonitis,"chills,fever,cough,shortness of breath,chest tightness",Pulmonologist / Allergist
+Legionnaires' Disease,"headache,muscle pain,chills,fever that may be 104 F (40 C) or higher,cough,shortness of breath,chest pain",Infectious Disease Specialist / Pulmonologist
+Psittacosis (Parrot Fever),"fever and chills,nausea and vomiting,muscle and joint pain,headache,fatigue,a dry cough",Infectious Disease Specialist
+Q Fever,"high fever,severe headache,fatigue,chills or sweats,muscle aches,nausea, vomiting or diarrhea",Infectious Disease Specialist
+Rocky Mountain Spotted Fever,"high fever,chills,severe headache,rash,muscle aches,nausea and vomiting",Infectious Disease Specialist
+Typhoid Fever,"fever that starts low and increases daily,headache,weakness and fatigue,muscle aches,sweating,dry cough",Infectious Disease Specialist
+Cholera,"diarrhea,nausea and vomiting,dehydration,muscle cramps",Infectious Disease Specialist
+Botulism,"difficulty swallowing or speaking,dry mouth,facial weakness on both sides of the face,blurred or double vision,drooping eyelids,trouble breathing",Neurologist / Infectious Disease Specialist
+Anthrax,"a group of small blisters or bumps that may itch,swelling around the sore,a painless skin sore (ulcer) with a black center,fever and chills,chest discomfort,shortness of breath",Infectious Disease Specialist
+Smallpox,"high fever,head and body aches,vomiting,a rash that spreads and progresses to raised bumps and pus-filled blisters",Infectious Disease Specialist
+Yellow Fever,"fever,headache,muscle aches, particularly in your back and knees,sensitivity to light,nausea, vomiting or both,loss of appetite",Infectious Disease Specialist
+Zika Virus,"mild fever,rash,joint pain,conjunctivitis (red eyes),muscle pain,headache",Infectious Disease Specialist / General Physician
+Chikungunya,"fever and joint pain,headache,muscle pain,joint swelling,rash",Infectious Disease Specialist / Rheumatologist
+West Nile Virus,"fever,headache,body aches,vomiting,diarrhea,rash",Infectious Disease Specialist / Neurologist
+Hantavirus Pulmonary Syndrome,"fever,chills,muscle aches,headaches,dizziness,nausea, vomiting, diarrhea, abdominal pain",Infectious Disease Specialist / Pulmonologist
+Ebola Virus Disease,"fever,severe headache,muscle pain,weakness,fatigue,diarrhea,vomiting,abdominal (stomach) pain,unexplained hemorrhage (bleeding or bruising)",Infectious Disease Specialist
+Marburg Virus Disease,"fever,chills,headache,myalgia,maculopapular rash,nausea,vomiting,chest pain,sore throat",Infectious Disease Specialist
+Lassa Fever,"fever,weakness,headaches,sore throat,muscle pain,chest pain,nausea,vomiting,diarrhea,cough",Infectious Disease Specialist
+Rift Valley Fever,"fever,weakness,back pain,dizziness,eye disease,encephalitis,hemorrhagic fever",Infectious Disease Specialist
+Diphtheria,"a thick, gray membrane covering your throat and tonsils,a sore throat and hoarseness,swollen glands (enlarged lymph nodes) in your neck,difficulty breathing or rapid breathing,nasal discharge",Infectious Disease Specialist / ENT Specialist
+Whooping Cough (Pertussis),"runny nose,nasal congestion,red, watery eyes,fever,cough,a 'whoop' sound during the next breath of air",Infectious Disease Specialist / Pediatrician
+Rubella (German Measles),"mild fever,headache,stuffy or runny nose,inflamed, red eyes,enlarged, tender lymph nodes,a fine, pink rash",Pediatrician / General Physician
+Mumps,"puffy cheeks and a tender, swollen jaw,fever,headache,muscle aches,weakness and fatigue,loss of appetite",Pediatrician / General Physician
+Polio,"fever,sore throat,headache,vomiting,fatigue,back pain or stiffness,neck pain or stiffness,pain or stiffness in the arms or legs",Neurologist / Infectious Disease Specialist
+Scabies,"itching, often severe and usually worse at night,thin, irregular burrow tracks made up of tiny blisters or bumps on your skin",Dermatologist
+Pediculosis (Lice),"intense itching on the scalp, body or in the genital area,tickling feeling from movement of hair,lice on your scalp, body, clothing, or other body hair,lice eggs (nits) on hair shafts",Dermatologist / General Physician
+Giardiasis,"watery, sometimes foul-smelling diarrhea,fatigue,abdominal cramps and bloating,gas,nausea",Gastroenterologist / Infectious Disease Specialist
+Amebiasis,"loose stools,stomach cramping,stomach pain",Gastroenterologist / Infectious Disease Specialist
+Cryptosporidiosis,"watery diarrhea,dehydration,weight loss,stomach cramps or pain,fever,nausea,vomiting",Gastroenterologist / Infectious Disease Specialist
+Trichinosis,"diarrhea,abdominal pain,fatigue,nausea and vomiting,fever,muscle pain and tenderness,headache",Infectious Disease Specialist
+Tapeworm Infection,"nausea,weakness,loss of appetite,abdominal pain,diarrhea,dizziness,salt craving",Infectious Disease Specialist / Gastroenterologist
+Hookworm Infection,"abdominal pain,diarrhea,loss of appetite,weight loss,fatigue,anemia",Infectious Disease Specialist / Gastroenterologist
+Ascariasis (Roundworm Infection),"abdominal pain,nausea and vomiting,diarrhea or bloody stools,fatigue,visible worms in stool",Infectious Disease Specialist / Gastroenterologist
+Pinworm Infection,"itching of the anal or vaginal area,insomnia, irritability and restlessness,intermittent abdominal pain and nausea",Pediatrician / General Physician
+Filariasis (Elephantiasis),"swelling of the limbs or genitals,fever,chills,general feeling of illness",Infectious Disease Specialist
+Schistosomiasis,"rash or itchy skin,fever,chills,cough,muscle aches",Infectious Disease Specialist
+Leishmaniasis,"skin sores,fever,weight loss,enlargement of the spleen and liver,abnormal blood counts",Infectious Disease Specialist / Dermatologist
+Chagas Disease,"fever,fatigue,body aches,headache,rash,loss of appetite,diarrhea,vomiting,swelling at the infection site",Infectious Disease Specialist / Cardiologist
+African Trypanosomiasis (Sleeping Sickness),"fever,severe headaches,irritability,extreme fatigue,swollen lymph nodes,aching muscles and joints",Infectious Disease Specialist / Neurologist
+Keratoconus,"blurred or distorted vision,increased sensitivity to bright light and glare,a need for frequent changes in eyeglass prescriptions,sudden worsening or clouding of vision",Ophthalmologist
+Retinal Detachment,"the sudden appearance of many floaters,flashes of light in one or both eyes (photopsia),a curtain-like shadow over your visual field",Ophthalmologist / Retinal Specialist
+Strabismus (Crossed Eyes),"eyes that don't look in the same direction at the same time,eyes that don't move together,squinting or closing one eye in bright sunlight,head tilting,double vision",Pediatric Ophthalmologist / Ophthalmologist
+Amblyopia (Lazy Eye),"an eye that wanders inward or outward,eyes that appear to not work together,poor depth perception,squinting or shutting an eye,head tilting",Pediatric Ophthalmologist / Ophthalmologist
+Color Blindness,"trouble seeing colors and the brightness of colors in the usual way,inability to tell the difference between shades of the same or similar colors",Ophthalmologist
+Night Blindness (Nyctalopia),"difficulty seeing in dim light,trouble adapting to changes in light,poor vision in darkness",Ophthalmologist
+Presbyopia,"a tendency to hold reading material farther away to make the letters clearer,blurred vision at normal reading distance,eyestrain or headaches after reading or doing close-up work",Ophthalmologist / Optometrist
+Myopia (Nearsightedness),"blurry vision when looking at distant objects,the need to squint or partially close the eyelids to see clearly,headaches caused by eyestrain",Ophthalmologist / Optometrist
+Hyperopia (Farsightedness),"nearby objects may appear blurry,you need to squint to see clearly,you have eyestrain, including burning eyes, and aching in or around the eyes",Ophthalmologist / Optometrist
+Astigmatism,"blurred or distorted vision,eyestrain or discomfort,headaches,difficulty with night vision,squinting",Ophthalmologist / Optometrist

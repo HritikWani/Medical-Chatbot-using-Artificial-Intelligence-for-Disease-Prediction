@@ -1,0 +1,43 @@
+Disease,Specialist,Doctor,Contact,Location
+Drug Reaction,Allergist,Dr. Amit Verma,+91 8764065659,Mumbai
+Allergy,Allergist,Dr. Ramesh Choudhary,+91 9731541060,Chennai
+Hypertension,Cardiologist,Dr. Kiran Malhotra,+91 9794255717,Bangalore
+Heart attack,Cardiologist,Dr. Suresh Iyer,+91 6342155706,Pune
+Psoriasis,Dermatologist,Dr. Anjali Mehta,+91 8169074571,Ahmedabad
+Chicken pox,Dermatologist,Dr. Aadi Sharma,+91 8546424734,Mumbai
+Acne,Dermatologist,Dr. Sunita Rao,+91 6985805682,Kolkata
+Impetigo,Dermatologist,Dr. Bela Singh,+91 7397722737,Hyderabad
+Fungal infection,Dermatologist,Dr. Rajesh Sharma,+91 7911718368,Kolkata
+Hypothyroidism,Endocrinologist,Dr. Chris Joseph,+91 9885132445,Kolkata
+Diabetes,Endocrinologist,Dr. Dia Khanna,+91 7779482279,Delhi
+Hypoglycemia,Endocrinologist,Dr. Ethan Paul,+91 9567905518,Mumbai
+Hyperthyroidism,Endocrinologist,Dr. Neha Nair,+91 9095542293,Bangalore
+GERD,Gastroenterologist,Dr. Priya Patel,+91 9278028742,Bangalore
+Peptic ulcer disease,Gastroenterologist,Dr. Farah Ali,+91 6286198734,Lucknow
+Jaundice,Gastroenterologist,Dr. Gary Hooda,+91 7594039229,Chennai
+Dimorphic hemorrhoids (piles),Gastroenterologist,Dr. Hema Varma,+91 8948104485,Lucknow
+Gastroenteritis,Gastroenterologist,Dr. Ishaan Jain,+91 7373584637,Hyderabad
+Urinary tract infection,Gynecologist,Dr. Jenifer Roy,+91 8411888944,Delhi
+Chronic cholestasis,Hepatologist,Dr. Karan Sen,+91 6733101918,Lucknow
+Hepatitis A,Hepatologist,Dr. Lisa Dsouza,+91 8044571574,Mumbai
+Hepatitis B,Hepatologist,Dr. Mayank Kulkarni,+91 7296977935,Lucknow
+Hepatitis C,Hepatologist,Dr. Noel George,+91 7735731689,Bangalore
+Hepatitis E,Hepatologist,Dr. Owen Samuel,+91 9781088249,Jaipur
+Hepatitis D,Hepatologist,Dr. Pooja Shah,+91 9215820513,Kolkata
+Alcoholic hepatitis,Hepatologist,Dr. Qasim Khan,+91 7112307622,Pune
+Malaria,Internal Medicine,Dr. Riya Das,+91 8095878173,Delhi
+Dengue,Internal Medicine,Dr. Samir Naik,+91 9379853205,Mumbai
+Migraine,Neurologist,Dr. Vikram Desai,+91 7402280020,Chennai
+Cervical spondylosis,Neurologist,Dr. Tina Mathur,+91 7336780985,Chennai
+Paralysis (brain hemorrhage),Neurologist,Dr. Uma Reddy,+91 8211443141,Chennai
+AIDS,Osteopathic,Dr. Vimal Babu,+91 6074773153,Delhi
+(vertigo) Paroxysmal Positional Vertigo,Otolaryngologist,Dr. William Stone,+91 9916150016,Chennai
+Common Cold,Otolaryngologist,Dr. Xavier K.,+91 8134505961,Hyderabad
+Typhoid,Pediatrician,Dr. Yash Gupta,+91 8075912861,Hyderabad
+Varicose veins,Phlebologist,Dr. Zoya Irani,+91 8041857388,Bangalore
+Bronchial Asthma,Pulmonologist,Dr. Neil Anand,+91 6903376038,Hyderabad
+Pneumonia,Pulmonologist,Dr. Sam John,+91 6170179690,Chennai
+Osteoarthritis,Rheumatologists,Dr. Leah Thomas,+91 9584669281,Lucknow
+Arthritis,Rheumatologists,Dr. Mark White,+91 9406631250,Mumbai
+Tuberculosis,Tuberculosis,Dr. Priya Patel,+91 8767307927,Kolkata
+```,,Dr. Neha Nair,+91 9874453587,Lucknow
