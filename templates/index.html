@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Chatbot</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            background-image: url('static/cute bot.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .chatbot-intro {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(240, 97, 228, 0.897);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .chatbot-intro h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+
+        .main-content {
+            display: none;
+            text-align: center;
+        }
+
+        .input-box {
+            width: 800px;
+            height: 600px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #F9C2EA;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .input-box h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .input-box label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        
+
+        .input-box  iframe {
+            width: 93%;
+            width: 700px;
+            height: 500px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #333;
+            margin-bottom: 15px;
+            resize: none;
+        }
+
+        .input-box button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #B5C2EE;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid #333;
+            width: 100%;
+        }
+
+        .input-box button[type="submit"]:hover {
+            background-color: #F9C2EA;
+        }
+    </style>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="chatbot-intro">
+        <h2>Hello! I'm your Healthcare Assistant</h2>
+    </div>
+    
+    <div class="main-content">
+        <div class="input-box">
+            
+            <form action="/predict" method="post">
+            <iframe width="550" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/14d2278e-588e-4249-8cc3-4f05709939ae"></iframe>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Animation to show the chatbot after intro fades out
+            setTimeout(function () {
+                $('.chatbot-intro').slideUp(1000, function () {
+                    $('.main-content').fadeIn(1000);
+                });
+            }, 1000);
+
+            // Listen for the message from Dialogflow (iframe)
+            const iframe = document.getElementById('chatbotIframe');
+
+            window.addEventListener('message', function (event) {
+                // Ensure the message comes from the Dialogflow iframe
+                if (event.origin === 'https://console.dialogflow.com') {
+                    const data = event.data;
+
+                    // Check if the response contains the redirection URL
+                    if (data.payload && data.payload.redirect_url) {
+                        const redirectUrl = data.payload.redirect_url;
+
+                        // Log the redirect URL (for debugging)
+                        console.log("Redirecting to:", redirectUrl);
+
+                        // Redirect after a short delay (to ensure user sees the message)
+                        setTimeout(function () {
+                            window.location.href = redirectUrl;  // Perform the redirection
+                        }, 500);  // Adjust delay if needed (1500 ms = 1.5 seconds)
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

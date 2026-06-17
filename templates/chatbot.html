@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Chatbot</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+    body { background-color:#6c4ed2; }
+    .container { max-width:900px; margin:0 auto; padding:10px; }
+    .header { background-color:#332e45; color:white; padding:20px; border-radius:10px 10px 0 0; display:flex; justify-content:space-between; align-items:center; }
+    .header h1 { font-size:24px; }
+    .header a { color:#ecf0f1; text-decoration:none; }
+    .header a:hover { text-decoration:underline; }
+
+    .mode-toggle{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white;
+    font-size:14px;
+    }
+
+    /* Toggle switch */
+    .switch{
+    position:relative;
+    display:inline-block;
+    width:46px;
+    height:22px;
+    }
+
+    .switch input{
+    opacity:0;
+    width:0;
+    height:0;
+    }
+
+    .slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#ccc;
+    transition:.4s;
+    border-radius:22px;
+    }
+
+    .slider:before{
+    position:absolute;
+    content:"";
+    height:16px;
+    width:16px;
+    left:3px;
+    bottom:3px;
+    background:white;
+    transition:.4s;
+    border-radius:50%;
+    }
+
+    input:checked + .slider{
+    background:#27ae60;
+    }
+
+    input:checked + .slider:before{
+    transform:translateX(24px);
+    }
+    .chat-container { background-color:white; border-radius:0 0 10px 10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); margin-bottom:20px; }
+    #chat-box { height:350px; overflow-y:auto; padding:15px; border-bottom:1px solid #e1e5eb; }
+    .bot-message,.user-message { margin-bottom:15px; max-width:80%; padding:10px 15px; border-radius:18px; word-wrap:break-word; }
+    .bot-message { background-color:#e1e5eb; border-bottom-left-radius:5px; float:left; clear:both; }
+    .user-message { background-color:#3498db; color:white; border-bottom-right-radius:5px; float:right; clear:both; }
+    .input-area { padding:15px; display:flex; gap:10px; }
+    #symptom-input { flex:1; padding:10px; border:1px solid #ddd; border-radius:5px; font-size:16px; }
+    button { background-color:#3498db; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; font-size:16px; transition:background-color 0.3s; }
+    button:hover { background-color:#2980b9; }
+    .results-section { background-color:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); padding:20px; margin-top:20px; }
+    .results-section h2 { color:#2c3e50; margin-bottom:20px; text-align:center; }
+    .results-section h3 { color:#2c3e50; margin-bottom:10px; border-bottom:1px solid #e1e5eb; padding-bottom:5px; }
+    .prediction-card { padding:15px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); margin-bottom:10px; }
+    .prediction-card.best { border:2px solid #27ae60; background-color:#f0fff4; }
+    .prediction-card .model-name { font-weight:bold; display:flex; justify-content:space-between; }
+    .prediction-card .accuracy { font-size:14px; color:#7f8c8d; }
+    .accuracy-bar { height:8px; background:#ecf0f1; border-radius:4px; margin-top:8px; overflow:hidden; }
+    .accuracy-fill { height:100%; background:#3498db; width:0; transition:width 0.8s; }
+    .best .accuracy-fill { background:#27ae60; }
+    .final-diagnosis-container { padding:20px; border-radius:8px; background:#2c3e50; color:white; text-align:center; font-size:20px; font-weight:bold; }
+    .disclaimer { background:#fff3cd; padding:10px; border-radius:5px; font-size:14px; color:#856404; margin-top:20px; }
+    .clearfix::after { content:""; display:table; clear:both; }
+    .best-badge { display:inline-block; padding:3px 6px; background:#27ae60; color:white; font-size:12px; border-radius:4px; margin-left:10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+  <h1>In Health and Sickness</h1>
+
+  <div style="display:flex; align-items:center; gap:15px;">
+
+    <!-- CHAT / PREDICT TOGGLE -->
+<div class="mode-toggle" id="mode-toggle">
+<span>💬 Chat</span>
+
+<label class="switch">
+<input type="checkbox" id="modeToggle">
+<span class="slider"></span>
+</label>
+
+<span>🩺 Predict</span>
+</div>
+
+    <label style="color:white; font-size:14px; cursor:pointer;">
+      <input type="checkbox" id="voiceToggle" checked style="margin-right:5px;" />
+      🔊
+    </label>
+
+    <p style="margin:0;">
+      Welcome, <span id="username">User</span>! |
+      <a href="/logout">Logout</a>
+    </p>
+  </div>
+</div>
+
+
+    <div class="chat-container">
+      <div id="chat-box">
+        <div class="bot-message">
+        <p>Hello! I'm your medical assistant. Toggle the switch above to choose Chat or Prediction mode.</p>
+      </div>
+      <div class="clearfix"></div>
+      </div>
+
+        <div class="input-area">
+            <input type="text" id="symptom-input" placeholder="Enter your command or symptoms..." />
+            <button id="micBtn" title="Speak">🎙️</button>
+            <button onclick="sendInput()">Send</button>
+        </div>
+
+    </div>
+
+    <div id="results-section" class="results-section" style="display:none;">
+      <h2>Diagnostic Results</h2>
+      <div class="model-predictions">
+        <h3>Model Predictions</h3>
+        <div id="predictions-container"class="predictions-container"></div>
+      </div>
+      <div class="final-diagnosis">
+        <h3>Final Diagnosis</h3>
+        <div id="final-diagnosis-container" class="final-diagnosis-container"></div>
+      </div>
+      <div id="recommendations-section" class="recommendations-section">
+        <h3>Recommended Specialists</h3>
+        <div id="recommendations-container"></div>
+      </div>
+      <div class="disclaimer">
+        <p>Note: This is an AI-based prediction and should not replace professional medical advice.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let chatMode = "chat"; // State: predict, chat
+
+    const modeToggle = document.getElementById("modeToggle");
+
+    modeToggle.addEventListener("change",()=>{
+
+    document.getElementById("results-section").style.display="none";
+
+    if(modeToggle.checked){
+
+    chatMode="predict";
+    addBotMessage("Prediction mode activated. Enter symptoms like fever, cough, fatigue.");
+
+    }
+    else{
+    chatMode="chat";
+    addBotMessage("Chat mode activated. Ask any health related question.");
+    }
+
+    });
+    let diagnosisPending = false; // Flag to manage "Analyzing..." message
+    const CHAT_HISTORY_KEY = "chatbotHistory";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Fetch Username
+      fetch("/get_username")
+        .then(res => res.json())
+        .then(data => {
+          if (data.username) document.getElementById("username").textContent = data.username;
+        })
+        .catch(err => console.error("Error fetching username:", err));
+
+      // 2. Load Chat History
+      loadChatHistory();
+      
+      // 3. Setup Input Listener
+      document.getElementById("symptom-input").focus();
+      document.getElementById("symptom-input").addEventListener("keypress", e => {
+        if (e.key === "Enter") sendInput();
+      });
+      // --------------------
+      // 🎙️ Speech to Text
+      // --------------------
+      const micBtn = document.getElementById("micBtn");
+      const inputField = document.getElementById("symptom-input");
+
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        const recognition = new SpeechRecognition();
+        recognition.lang = "en-IN";   // Indian English
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        micBtn.addEventListener("click", () => {
+          recognition.start();
+          micBtn.textContent = "🎙️...";
+        });
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          inputField.value = transcript;
+          micBtn.textContent = "🎙️";
+        };
+
+        recognition.onerror = () => {
+          micBtn.textContent = "🎙️";
+          alert("Speech recognition failed. Try again.");
+        };
+
+        recognition.onend = () => {
+          micBtn.textContent = "🎙️";
+        };
+      } else {
+        micBtn.disabled = true;
+        micBtn.title = "Speech recognition not supported";
+      }
+    });
+
+    // --- History Management Functions ---
+
+   function saveChatHistory(type, text, data = null) {
+       let history = JSON.parse(localStorage.getItem(CHAT_HISTORY_KEY) || '[]');
+       // Save mode and prediction data for bot message only
+       history.push({ type: type, text: text, mode: chatMode, data: data }); 
+       localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(history));
+    }
+
+    function loadChatHistory() {
+        const chatBox = document.getElementById("chat-box");
+        let history = JSON.parse(localStorage.getItem(CHAT_HISTORY_KEY) || '[]');
+        
+        const initialGreeting = "Hello! I'm your medical assistant. How can I help you today?";
+        if (history.length === 0) {
+             saveChatHistory('bot', initialGreeting, null);
+             return; // not loading empty history
+        }
+
+        // Clear the existing content to load history
+        chatBox.innerHTML = ''; 
+        
+        let lastData = null;
+        let lastMode = 'chat';
+        
+        history.forEach(msg => {
+            if (msg.type === 'bot') {
+                addBotMessage(msg.text, false); 
+                if (msg.data) lastData = msg.data;
+                lastMode = msg.mode;
+            } else if (msg.type === 'user') {
+                addUserMessage(msg.text, false); 
+            }
+        });
+        
+        // Restore the state
+        chatMode = lastMode; 
+        
+        if (lastData) {
+            displayResults(lastData);
+            document.getElementById("results-section").style.display = "block";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    }
+
+    function clearChatHistory() {
+        localStorage.removeItem(CHAT_HISTORY_KEY);
+        // use reload to reset the DOM and JS variables cleanly
+        window.location.reload(); 
+    }
+
+    function getContextWindow(limit = 6) {
+      let history = JSON.parse(localStorage.getItem(CHAT_HISTORY_KEY) || "[]");
+
+      let messages = history
+        .filter(msg => msg.type === "user" || msg.type === "bot")
+        .map(msg => ({
+          role: msg.type === "user" ? "user" : "assistant",
+          content: msg.text.replace(/<[^>]*>/g, "") // remove HTML
+        }));
+
+      return messages.slice(-limit);
+    }
+
+    function addUserMessage(text, save = true) {
+      const chatBox=document.getElementById("chat-box");
+      const div = document.createElement("div");
+      div.className = "user-message";
+      div.innerHTML = `<p>${text}</p>`;
+      chatBox.appendChild(div);
+      chatBox.appendChild(makeClearfix());
+      chatBox.scrollTop = chatBox.scrollHeight;
+      if (save) saveChatHistory('user', text);
+    }
+
+    function addBotMessage(text, save = true, data = null) {
+      const chatBox = document.getElementById("chat-box");
+      const div = document.createElement("div");
+      div.className = "bot-message";
+      div.innerHTML = `<p>${text}</p>`;
+      chatBox.appendChild(div);
+      chatBox.appendChild(makeClearfix());
+      chatBox.scrollTop = chatBox.scrollHeight;
+      
+      const plainText = text.replace(/<[^>]*>/g, "");
+      if (document.getElementById("voiceToggle")?.checked) {
+            speakText(plainText);
+        }
+
+      if (save) {
+          saveChatHistory('bot', text, data);
+      }
+    }
+
+    function makeClearfix() {
+      const div = document.createElement("div");
+      div.className = "clearfix";
+      return div;
+    }
+
+    // --- Main Input Handling ---
+
+    function sendInput() {
+      const input = document.getElementById("symptom-input").value.trim();
+      if (!input) {
+        addBotMessage("Please enter a response.");
+        return;
+      }
+
+      const lowerInput = input.toLowerCase();
+
+      // 1. Check for Reset Command (Global)
+      if (lowerInput === "start over" || lowerInput === "menu" || lowerInput === "home") {
+          addUserMessage(input);
+          document.getElementById("symptom-input").value = "";
+          handleReset();
+          return;
+      }
+
+      // 2. Check for Mode Switch Command (Global)
+      if (lowerInput === "chat" || lowerInput === "predict") {
+          addUserMessage(input);
+          document.getElementById("symptom-input").value = "";
+          document.getElementById("results-section").style.display = "none";
+          handleInitialChoice(lowerInput); 
+          return;
+      }
+      
+      // 3. Handle Greetings (Optional, avoids API call)
+      if (["hi", "hello", "hey", "good morning", "good evening"].includes(lowerInput)) {
+        addUserMessage(input);
+        document.getElementById("symptom-input").value = "";
+        addBotMessage("Hello! How can I help you?");
+        return;
+      }
+
+      // --- Continue with normal flow ---
+      addUserMessage(input);
+      document.getElementById("symptom-input").value = "";
+      document.getElementById("results-section").style.display = "none"; 
+
+      if (diagnosisPending) {
+          const chatBox = document.getElementById("chat-box");
+          chatBox.removeChild(chatBox.lastChild);
+          chatBox.removeChild(chatBox.lastChild);
+          diagnosisPending = false;
+      }
+
+      if (chatMode === "predict") {
+        handlePrediction(input);
+      } else if (chatMode === "chat") {
+        handleGeneralChat(input);
+      }
+    }
+
+    // --- State Handlers ---
+    
+    function handleReset() {
+        chatMode = "chat";
+        clearChatHistory(); // Clear storage and reload
+    }
+
+    function handleInitialChoice(choice) {
+      if (choice === "predict") {
+        chatMode = "predict";
+        addBotMessage("<strong>Prediction Mode Activated.</strong> Please enter your symptoms (e.g., fever, cough, fatigue).");
+      } else if (choice === "chat") {
+        chatMode = "chat";
+        addBotMessage("<strong>General Chat Mode Activated.</strong> Ask me anything about health and wellness!");
+      } else {
+        addBotMessage("I didn't recognize that command.");
+      }
+    }
+
+    function handleGeneralChat(text) {
+        addBotMessage("<em>Thinking...</em>");
+        diagnosisPending = true;
+
+        fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify({ text: text })
+            body: JSON.stringify({
+              text: text,
+              history: getContextWindow(8)
+            })
+        })
+        .then(response => {
+            const chatBox = document.getElementById("chat-box");
+            if (diagnosisPending) {
+                chatBox.removeChild(chatBox.lastChild);
+                chatBox.removeChild(chatBox.lastChild);
+                diagnosisPending = false;
+            }
+            if (!response.ok) {
+                if (response.status === 401) {
+                    window.location.href = "/login";
+                    return;
+                }
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                addBotMessage("Error: " + data.error);
+            } else {
+                addBotMessage(data.response);
+            }
+            // Set mode back to initial to force user choice
+            // chatMode = 'initial';
+            addBotMessage(`Is there anything else I can help you with?`);
+        })
+        .catch(error => {
+            addBotMessage(" Error: " + error.message);
+        });
+    }
+
+    function handlePrediction(symptoms) {
+      addBotMessage("<em>Analyzing your symptoms...</em>");
+      diagnosisPending = true;
+
+      fetch("/api/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: symptoms })
+      })
+      .then(response => {
+        const chatBox = document.getElementById("chat-box");
+        if (diagnosisPending) {
+            chatBox.removeChild(chatBox.lastChild);
+            chatBox.removeChild(chatBox.lastChild);
+            diagnosisPending = false;
+        }
+        if (!response.ok) {
+            if (response.status === 401) {
+                window.location.href = "/login";
+                return;
+            }
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("API Response:", data);
+
+        if (data.error) {
+          addBotMessage("Error: " + data.error);
+          if (data.unknown?.length) {
+            addBotMessage("Unknown symptoms: " + data.unknown.join(", "));
+          }
+          if (data.suggestions && Object.keys(data.suggestions).length) {
+            Object.entries(data.suggestions).forEach(([sym, sug]) => {
+              addBotMessage(`Did you mean "${sug.join(', ')}" instead of "${sym}"?`);
+            });
+          }
+          return;
+        }
+        
+        const prediction = data.best_prediction;
+        
+        // 1. prediction msg (Saved with data for history persistence)
+        addBotMessage(`Diagnosis Complete! Based on your symptoms, <strong>you may have ${prediction}</strong>. Please consult a doctor for a definitive diagnosis. ` +
+                      `You can view the detailed model analysis below.`, true, data);
+        
+        // 2. follow up message
+        addBotMessage(`Is there anything else I can help you with?`);
+        
+        // 3. Reset mode to 'initial' to force the global check on next input
+        // chatMode = 'initial'; 
+        
+        displayResults(data);
+        const results = document.getElementById("results-section");
+        results.style.display = "block";
+        results.scrollIntoView({ behavior: "smooth" });
+      })
+      .catch(error => {
+        addBotMessage("Error: " + error.message);
+      });
+    }
+
+    // --- Utility Functions (Keep these as they were) ---
+
+    function displayResults(data) {
+      const accuracies = data.accuracies || {};
+      const predictions = data.predictions || {};
+      const predictionsContainer = document.getElementById("predictions-container");
+      predictionsContainer.innerHTML = "";
+
+      const models = Object.keys(accuracies).sort((a, b) => accuracies[b] - accuracies[a]);
+      models.forEach(model => {
+        const prediction = predictions[model] || "Unknown";
+        const accuracy = accuracies[model] || 0;
+        const isBest = model === "SVM";
+
+        const card = document.createElement("div");
+        card.className = `prediction-card ${isBest ? "best" : ""}`;
+
+        const modelNameDiv = document.createElement("div");
+        modelNameDiv.className = "model-name";
+
+        const modelNameSpan = document.createElement("span");
+        modelNameSpan.textContent = model;
+        if (isBest) {
+          const badge = document.createElement("span");
+          badge.className = "best-badge";
+          badge.textContent = "Highest Accuracy";
+          modelNameSpan.appendChild(badge);
+        }
+
+        const accuracySpan = document.createElement("span");
+        accuracySpan.className = "accuracy";
+        accuracySpan.textContent = `Accuracy: ${accuracy.toFixed(2)}%`;
+
+        modelNameDiv.appendChild(modelNameSpan);
+        modelNameDiv.appendChild(accuracySpan);
+
+        const predictionDiv = document.createElement("div");
+        predictionDiv.className = "prediction";
+        predictionDiv.textContent = `Prediction: ${prediction}`;
+
+        const bar = document.createElement("div");
+        bar.className = "accuracy-bar";
+        const fill = document.createElement("div");
+        fill.className = "accuracy-fill";
+        bar.appendChild(fill);
+
+        card.appendChild(modelNameDiv);
+        card.appendChild(predictionDiv);
+        card.appendChild(bar);
+        predictionsContainer.appendChild(card);
+
+        setTimeout(() => { fill.style.width = `${accuracy}%`; }, 100);
+      });
+
+      document.getElementById("final-diagnosis-container").innerHTML = data.best_prediction || "No final diagnosis";
+
+      const recContainer = document.getElementById("recommendations-container");
+      recContainer.innerHTML = "";
+  
+      const finalDiagnosis = data.best_prediction || "";
+      if (finalDiagnosis) {
+        const p = document.createElement("p");
+        p.textContent = `Need to see a specialist for ${finalDiagnosis}?`;
+
+        const link = document.createElement("a");
+        link.href = `/doc?disease=${encodeURIComponent(finalDiagnosis)}`;
+        link.textContent = "Click here to find recommended specialists.";
+        link.style.display = "block";
+        link.style.marginTop = "10px";
+        link.style.color = "#3498db";
+        link.style.fontWeight = "bold";
+
+        recContainer.appendChild(p);
+        recContainer.appendChild(link);
+        document.getElementById("recommendations-section").style.display = "block";
+      } else {
+        document.getElementById("recommendations-section").style.display = "none";
+      }
+    }
+
+
+// --------------------
+// 🔊 Text to Speech
+// --------------------
+function speakText(text) {
+  if (!window.speechSynthesis) return;
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-IN";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+
+  window.speechSynthesis.cancel(); // stop previous speech
+  window.speechSynthesis.speak(utterance);
+}
+
+  </script>
+</body>
+</html>

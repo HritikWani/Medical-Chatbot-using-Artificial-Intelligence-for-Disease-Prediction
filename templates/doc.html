@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Recommendations</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #6c4ed2;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo i {
+            font-size: 28px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info a{
+            color: var(--dark);
+        }
+
+        .logout-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            color: var(--dark);
+            text-decoration: underline;
+        }
+
+        .doctors-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .disease-title {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .doctors-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .doctor-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctor-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .doctor-specialization {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .doctor-contact {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .doctor-location {
+            margin-top: 5px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        .error-message {
+            text-align: center;
+            color: #dc3545;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>Doctor Recommendation</span>
+            </div>
+            <div class="user-info">
+                <span id="username-display">Hello, User</span>
+                <a href="/logout" class="logout-btn">|      Logout</a>
+            </div>
+        </header>
+
+        <div class="doctors-container">
+            <div class="page-title">Recommended Specialists</div>
+            <div class="disease-title" id="disease-title">For: <span id="disease-name">Disease Name</span></div>
+            
+            <div id="doctors-list" class="doctors-list">
+                <div class="loading">Loading doctor recommendations...</div>
+            </div>
+            
+            <a href="/chatbot" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Chatbot
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Doctor data from the CSV file
+        const doctorData = [
+            { Disease: "Drug Reaction", Specialist: "Allergist", Doctor: "Dr. Amit Verma", Contact: "+91 8764065659", Location: "Mumbai" },
+            { Disease: "Allergy", Specialist: "Allergist", Doctor: "Dr. Ramesh Choudhary", Contact: "+91 9731541060", Location: "Chennai" },
+            { Disease: "Hypertension", Specialist: "Cardiologist", Doctor: "Dr. Kiran Malhotra", Contact: "+91 9794255717", Location: "Bangalore" },
+            { Disease: "Heart attack", Specialist: "Cardiologist", Doctor: "Dr. Suresh Iyer", Contact: "+91 6342155706", Location: "Pune" },
+            { Disease: "Psoriasis", Specialist: "Dermatologist", Doctor: "Dr. Anjali Mehta", Contact: "+91 8169074571", Location: "Ahmedabad" },
+            { Disease: "Chicken pox", Specialist: "Dermatologist", Doctor: "Dr. Anjali Mehta", Contact: "+91 8546424734", Location: "Mumbai" },
+            { Disease: "Acne", Specialist: "Dermatologist", Doctor: "Dr. Sunita Rao", Contact: "+91 6985805682", Location: "Kolkata" },
+            { Disease: "Impetigo", Specialist: "Dermatologist", Doctor: "Dr. Amit Verma", Contact: "+91 7397722737", Location: "Hyderabad" },
+            { Disease: "Fungal infection", Specialist: "Dermatologist", Doctor: "Dr. Rajesh Sharma", Contact: "+91 7911718368", Location: "Kolkata" },
+            { Disease: "Hypothyroidism", Specialist: "Endocrinologist", Doctor: "Dr. Sunita Rao", Contact: "+91 9885132445", Location: "Kolkata" },
+            { Disease: "Diabetes", Specialist: "Endocrinologist", Doctor: "Dr. Anjali Mehta", Contact: "+91 7779482279", Location: "Delhi" },
+            { Disease: "Hypoglycemia", Specialist: "Endocrinologist", Doctor: "Dr. Amit Verma", Contact: "+91 9567905518", Location: "Mumbai" },
+            { Disease: "Hyperthyroidism", Specialist: "Endocrinologist", Doctor: "Dr. Neha Nair", Contact: "+91 9095542293", Location: "Bangalore" },
+            { Disease: "GERD", Specialist: "Gastroenterologist", Doctor: "Dr. Priya Patel", Contact: "+91 9278028742", Location: "Bangalore" },
+            { Disease: "Peptic ulcer disease", Specialist: "Gastroenterologist", Doctor: "Dr. Ramesh Choudhary", Contact: "+91 6286198734", Location: "Lucknow" },
+            { Disease: "Jaundice", Specialist: "Gastroenterologist", Doctor: "Dr. Amit Verma", Contact: "+91 7594039229", Location: "Chennai" },
+            { Disease: "Dimorphic hemorrhoids (piles)", Specialist: "Gastroenterologist", Doctor: "Dr. Rajesh Sharma", Contact: "+91 8948104485", Location: "Lucknow" },
+            { Disease: "Gastroenteritis", Specialist: "Gastroenterologist", Doctor: "Dr. Ramesh Choudhary", Contact: "+91 7373584637", Location: "Hyderabad" },
+            { Disease: "Urinary tract infection", Specialist: "Gynecologist", Doctor: "Dr. Anjali Mehta", Contact: "+91 8411888944", Location: "Delhi" },
+            { Disease: "Chronic cholestasis", Specialist: "Hepatologist", Doctor: "Dr. Amit Verma", Contact: "+91 6733101918", Location: "Lucknow" },
+            { Disease: "Hepatitis A", Specialist: "Hepatologist", Doctor: "Dr. Neha Nair", Contact: "+91 8044571574", Location: "Mumbai" },
+            { Disease: "Hepatitis B", Specialist: "Hepatologist", Doctor: "Dr. Sunita Rao", Contact: "+91 7296977935", Location: "Lucknow" },
+            { Disease: "Hepatitis C", Specialist: "Hepatologist", Doctor: "Dr. Ramesh Choudhary", Contact: "+91 7735731689", Location: "Bangalore" },
+            { Disease: "Hepatitis E", Specialist: "Hepatologist", Doctor: "Dr. Kiran Malhotra", Contact: "+91 9781088249", Location: "Jaipur" },
+            { Disease: "Hepatitis D", Specialist: "Hepatologist", Doctor: "Dr. Neha Nair", Contact: "+91 9215820513", Location: "Kolkata" },
+            { Disease: "Alcoholic hepatitis", Specialist: "Hepatologist", Doctor: "Dr. Neha Nair", Contact: "+91 7112307622", Location: "Pune" },
+            { Disease: "Malaria", Specialist: "Internal Medicine", Doctor: "Dr. Amit Verma", Contact: "+91 8095878173", Location: "Delhi" },
+            { Disease: "Dengue", Specialist: "Internal Medicine", Doctor: "Dr. Priya Patel", Contact: "+91 9379853205", Location: "Mumbai" },
+            { Disease: "Migraine", Specialist: "Neurologist", Doctor: "Dr. Priya Patel", Contact: "+91 7402280020", Location: "Chennai" },
+            { Disease: "Cervical spondylosis", Specialist: "Neurologist", Doctor: "Dr. Vikram Desai", Contact: "+91 7336780985", Location: "Chennai" },
+            { Disease: "Paralysis (brain hemorrhage)", Specialist: "Neurologist", Doctor: "Dr. Suresh Iyer", Contact: "+91 8211443141", Location: "Chennai" },
+            { Disease: "AIDS", Specialist: "Osteopathic", Doctor: "Dr. Vikram Desai", Contact: "+91 6074773153", Location: "Delhi" },
+            { Disease: "(vertigo) Paroxysmal Positional Vertigo", Specialist: "Otolaryngologist", Doctor: "Dr. Sunita Rao", Contact: "+91 9916150016", Location: "Chennai" },
+            { Disease: "Common Cold", Specialist: "Otolaryngologist", Doctor: "Dr. Sunita Rao", Contact: "+91 8134505961", Location: "Hyderabad" },
+            { Disease: "Typhoid", Specialist: "Pediatrician", Doctor: "Dr. Amit Verma", Contact: "+91 8075912861", Location: "Hyderabad" },
+            { Disease: "Varicose veins", Specialist: "Phlebologist", Doctor: "Dr. Vikram Desai", Contact: "+91 8041857388", Location: "Bangalore" },
+            { Disease: "Bronchial Asthma", Specialist: "Pulmonologist", Doctor: "Dr. Anjali Mehta", Contact: "+91 6903376038", Location: "Hyderabad" },
+            { Disease: "Pneumonia", Specialist: "Pulmonologist", Doctor: "Dr. Neha Nair", Contact: "+91 6170179690", Location: "Chennai" },
+            { Disease: "Osteoarthritis", Specialist: "Rheumatologists", Doctor: "Dr. Amit Verma", Contact: "+91 9584669281", Location: "Lucknow" },
+            { Disease: "Arthritis", Specialist: "Rheumatologists", Doctor: "Dr. Rajesh Sharma", Contact: "+91 9406631250", Location: "Mumbai" },
+            { Disease: "Tuberculosis", Specialist: "Tuberculosis", Doctor: "Dr. Priya Patel", Contact: "+91 8767307927", Location: "Kolkata" }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch current username
+            fetch('/get_username')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.username) {
+                        document.getElementById('username-display').textContent = `Hello, ${data.username}`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching username:', error);
+                });
+
+            // Get disease from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const disease = urlParams.get('disease');
+            
+            if (disease) {
+                document.getElementById('disease-name').textContent = disease;
+                
+                try {
+                    const doctorsList = document.getElementById('doctors-list');
+                    doctorsList.innerHTML = ''; // Clear loading message
+                    
+                    // Filter doctors for this disease
+                    const relevantDoctors = doctorData.filter(doc => 
+                        doc.Disease.toLowerCase() === disease.toLowerCase()
+                    );
+                    
+                    if (relevantDoctors && relevantDoctors.length > 0) {
+                        relevantDoctors.forEach(doctor => {
+                            const doctorCard = document.createElement('div');
+                            doctorCard.className = 'doctor-card';
+                            
+                            doctorCard.innerHTML = `
+                                <div class="doctor-name">${doctor.Doctor}</div>
+                                <div class="doctor-specialization">Specialization: ${doctor.Specialist}</div>
+                                <div class="doctor-contact">Contact: ${doctor.Contact}</div>
+                                <div class="doctor-location">Location: ${doctor.Location}</div>
+                            `;
+                            
+                            doctorsList.appendChild(doctorCard);
+                        });
+                    } else {
+                        // If no exact match, try to find doctors with similar specialization
+                        const similarDoctors = findSimilarDoctors(disease);
+                        
+                        if (similarDoctors.length > 0) {
+                            const noteElement = document.createElement('div');
+                            noteElement.style.gridColumn = '1 / -1';
+                            noteElement.style.marginBottom = '20px';
+                            noteElement.innerHTML = `<p>No exact match found for "${disease}". Showing doctors who may be able to help:</p>`;
+                            doctorsList.appendChild(noteElement);
+                            
+                            similarDoctors.forEach(doctor => {
+                                const doctorCard = document.createElement('div');
+                                doctorCard.className = 'doctor-card';
+                                
+                                doctorCard.innerHTML = `
+                                    <div class="doctor-name">${doctor.Doctor}</div>
+                                    <div class="doctor-specialization">Specialization: ${doctor.Specialist}</div>
+                                    <div class="doctor-contact">Contact: ${doctor.Contact}</div>
+                                    <div class="doctor-location">Location: ${doctor.Location}</div>
+                                `;
+                                
+                                doctorsList.appendChild(doctorCard);
+                            });
+                        } else {
+                            doctorsList.innerHTML = '<p class="error-message">No doctors found for this disease. Please consult a general physician.</p>';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error processing doctor data:', error);
+                    document.getElementById('doctors-list').innerHTML = '<p class="error-message">Error loading doctor recommendations. Please try again later.</p>';
+                }
+            } else {
+                document.getElementById('doctors-list').innerHTML = '<p class="error-message">No disease specified.</p>';
+            }
+        });
+
+        // Function to find doctors with similar specializations or for common conditions
+        function findSimilarDoctors(disease) {
+            // If it's a common condition, recommend general physicians
+            if (disease.toLowerCase().includes('fever') || 
+                disease.toLowerCase().includes('cold') || 
+                disease.toLowerCase().includes('flu') || 
+                disease.toLowerCase().includes('infection')) {
+                return doctorData.filter(doc => 
+                    doc.Specialist === 'Internal Medicine' || 
+                    doc.Specialist === 'Pediatrician'
+                );
+            }
+
+            // For skin conditions
+            if (disease.toLowerCase().includes('skin') || 
+                disease.toLowerCase().includes('rash') || 
+                disease.toLowerCase().includes('itch')) {
+                return doctorData.filter(doc => doc.Specialist === 'Dermatologist');
+            }
+
+            // For stomach/digestive issues
+            if (disease.toLowerCase().includes('stomach') || 
+                disease.toLowerCase().includes('digestive') || 
+                disease.toLowerCase().includes('liver') || 
+                disease.toLowerCase().includes('intestine')) {
+                return doctorData.filter(doc => 
+                    doc.Specialist === 'Gastroenterologist' || 
+                    doc.Specialist === 'Hepatologist'
+                );
+            }
+
+            // For heart/blood pressure issues
+            if (disease.toLowerCase().includes('heart') || 
+                disease.toLowerCase().includes('blood pressure') || 
+                disease.toLowerCase().includes('cardiac')) {
+                return doctorData.filter(doc => doc.Specialist === 'Cardiologist');
+            }
+
+            // If no specific condition matched, return some general doctors
+            return doctorData.filter(doc => 
+                doc.Specialist === 'Internal Medicine' || 
+                doc.Doctor === 'Dr. Amit Verma' || 
+                doc.Doctor === 'Dr. Neha Nair'
+            ).slice(0, 3);
+        }
+    </script>
+</body>
+</html>

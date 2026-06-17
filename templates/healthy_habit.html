@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Habit Guide</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+    }
+
+    body {
+      background: #6c4ed2;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e8b57;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #5b3cc4;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    p.intro {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #ffffff;
+    }
+
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style-type: "✔ ";
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .reminder {
+      background: #fff3cd;
+      border-left: 6px solid #ffca2c;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    /* ---------- DRAWER NAVIGATION ---------- */
+    .hamburger {
+      font-size: 26px;
+      color: #ffffff;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #5b3cc4;
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    .drawer a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .drawer a:hover {
+      background: #4529a3;
+    }
+
+    .drawer.open {
+      left: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleDrawer()">&#9776;</div>
+
+  <!-- Drawer Menu -->
+  <div class="drawer" id="drawer">
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('signup') }}">Signup</a>
+    <a href="{{ url_for('healthy_habit') }}">Healthy Habit</a>
+  </div>
+
+  <!-- Page Title -->
+  <h1 style="font-size: 30px; color: black;">🟢 Healthy Habits</h1>
+
+  <!-- Intro Paragraph -->
+  <p class="intro">
+    Good health is the foundation of a happy and productive life. Following simple daily habits can help prevent diseases, 
+    improve immunity, and maintain physical and mental well-being.
+  </p>
+
+  <!-- Daily Healthy Habits -->
+  <div class="section">
+    <h2>🟢 Daily Healthy Habits</h2>
+    <ul>
+      <li>Balanced Diet – Eat plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats.</li>
+      <li>Stay Hydrated – Drink at least 7–8 glasses of water daily.</li>
+      <li>Regular Exercise – Engage in at least 30 minutes of physical activity (walking, yoga, cycling, etc.).</li>
+      <li>Adequate Sleep – Aim for 7–9 hours of quality sleep every night.</li>
+      <li>Stress Management – Practice meditation, deep breathing, or mindfulness.</li>
+      <li>Hygiene – Wash hands frequently, brush twice a day, and bathe regularly.</li>
+      <li>Avoid Harmful Substances – Limit junk food, alcohol, smoking, and excessive caffeine.</li>
+      <li>Regular Checkups – Visit doctors for health screenings and vaccinations.</li>
+      <li>Digital Detox – Reduce screen time and give your eyes rest.</li>
+      <li>Positive Mindset – Stay connected with family/friends and engage in hobbies.</li>
+    </ul>
+  </div>
+
+  <!-- First Aid & Remedies -->
+  <div class="section">
+    <h2>🟢 First Aid & Home Remedies</h2>
+    <p>
+      Quick and correct first aid can prevent complications and save lives. 
+      Here are some common first aid steps and home remedies for minor issues:
+    </p>
+
+    <h3>🩹 First Aid Tips</h3>
+    <ul>
+      <li>Cuts & Wounds: Wash with clean water, apply antiseptic, and cover with a bandage.</li>
+      <li>Burns (Minor): Cool under running water for 10–15 minutes, apply aloe vera gel. Avoid ice.</li>
+      <li>Nosebleeds: Sit upright, lean forward slightly, pinch the soft part of the nose for 10 minutes.</li>
+      <li>Sprains & Strains: Use R.I.C.E (Rest, Ice, Compression, Elevation).</li>
+      <li>Choking: Perform the Heimlich maneuver (abdominal thrusts).</li>
+      <li>Fainting: Lay the person flat, elevate legs slightly, loosen tight clothing.</li>
+    </ul>
+
+    <h3>🌿 Common Home Remedies</h3>
+    <ul>
+      <li>Cough/Cold: Drink warm water with honey and ginger. Steam inhalation helps relieve congestion.</li>
+      <li>Indigestion: Drink warm water or a glass of buttermilk with cumin.</li>
+      <li>Headache: Stay hydrated, rest in a dark room, or apply a cold compress on the forehead.</li>
+      <li>Acidity: Drink cold milk or coconut water. Avoid spicy food.</li>
+      <li>Sore Throat: Gargle with warm salt water 2–3 times a day.</li>
+    </ul>
+  </div>
+
+  <!-- Reminder -->
+  <div class="reminder">
+    ⚠ Note: These remedies are for minor health issues only. For severe or persistent symptoms, consult a doctor immediately.
+  </div>
+
+  <script>
+    function toggleDrawer() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
