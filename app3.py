@@ -34,7 +34,7 @@ app.config["BEST_MODEL"] = "SVM"
 from groq import Groq
 import os, re
 
-client = Groq(api_key="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")
+client = Groq(api_key="")
 
 def extract_symptoms(user_text):
     prompt = f"""
